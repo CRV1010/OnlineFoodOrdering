@@ -1,0 +1,55 @@
+create table admin( 
+	username varchar(20) primary key,
+	password varchar(20)
+);
+
+
+create table cart(
+	title varchar(20),
+	price int,
+	quantity int,
+	totalcost int,
+	username varchar(20),
+	address varchar(200),
+	pincode varchar(6),
+	primary key(title,username)
+);
+
+
+create table comment(
+	username varchar(20) not null,
+	title varchar(20),
+	text varchar(50)
+);
+
+
+create table fooditem(
+	food_title varchar(40) primary key,
+	food_details varchar(200),
+	food_price varchar(4),
+	food_poster mediumblob
+);
+
+
+create table orderitem(
+	orderId int primary key,
+	customerName varchar(50),
+	emailId varchar(50),
+	mobile varchar(20),
+	food_poster mediumblob,
+	food_title varchar(20),
+	quantity int,
+	price int,
+	delStatus varchar(30),
+	address varchar(100),
+	pincode varchar(6)
+);
+
+
+create table users(
+	username varchar(20) primary key,
+	dob varchar(20),
+	email varchar(50),
+	phone varchar(12),
+	password varchar(20)
+);
